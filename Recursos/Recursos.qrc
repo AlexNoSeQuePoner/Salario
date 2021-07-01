@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/imagenes">
+        <file>salario.png</file>
+        <file>calculadora.png</file>
+        <file>carpeta.png</file>
+        <file>disquete.png</file>
+        <file>hoja-en-blanco.png</file>
+        <file>salida-de-emergencia.png</file>
+        <file>informacion.png</file>
+        <file>boton-x.png</file>
+    </qresource>
+</RCC>
