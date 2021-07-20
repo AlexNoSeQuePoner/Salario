@@ -34,7 +34,7 @@ void Principal::calcular()
     //OBTENER LOS DATOS
     QString nombre = ui->inNombre->text();
     if (nombre.isEmpty()){
-        QMessageBox::warning(this, "Salarios", "No has proporcinado el nombre del obrero");
+        QMessageBox::warning(this, tr("Salarios"), tr("No has proporcinado el nombre del obrero"));
         return;
     }
     int horas = ui->inHoras->value();
@@ -72,7 +72,6 @@ void Principal::on_action_Nuevo_triggered()
 void Principal::on_action_AcercaDe_triggered()
 {
     Acerca *acercaDe = new Acerca(this);
-    acercaDe->setVersion(VERSION);
     acercaDe->show();
 }
 
@@ -81,11 +80,11 @@ void Principal::on_action_Guardar_triggered()
     //Crear un objeto QDir a partir del directorio del usuario
     QDir directorio = QDir::home();
     // agregar al path absoluto del objeto, un nombre por defecto
-    QString pathArchivo = directorio.absolutePath() + "/Archivo Salario.txt";
+    QString pathArchivo = directorio.absolutePath() + tr("/Archivo Salario.txt");
     //Abrir un cuadro de dialogo para seleccionar el nombre y ubicacion del archivo
-    QString fileName = QFileDialog::getSaveFileName(this, "Guardar Archivo",
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Guardar Archivo"),
                                                     pathArchivo,
-                                                    "Archivo de texto (*.txt)");
+                                                    tr("Archivo de texto (*.txt)"));
     // crear el archivo a partir del nombre crado por el cuadro de dialogo
     QFile f(fileName);
     // crear objeto QTextStream (permite escribir sobre el archivo)
@@ -93,7 +92,7 @@ void Principal::on_action_Guardar_triggered()
     // Intentar abrir el archivo para escribir (si no existe) o agregar texto (si existe)
     if(!f.open(QIODevice::WriteOnly | QIODevice::Append)){
         //Si no se puede abrir, sale una advertencia
-        QMessageBox::warning(this, "Salarios", "No se puede abrir el archivo" + fileName);
+        QMessageBox::warning(this, tr("Salarios"), tr("No se puede abrir el archivo") + fileName);
         //Salir
         return;
     }
@@ -106,14 +105,14 @@ void Principal::on_actionA_brir_triggered()
     // agregar al path absoluto del objeto, un nombre por defecto
     QString pathArchivo = directorio.absolutePath();
     //Abrir un cuadro de dialogo para seleccionar el nombre y ubicacion del archivo
-    QString fileName = QFileDialog::getOpenFileName(this, "Abrir Archivo",
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Abrir Archivo"),
                                                     pathArchivo,
-                                                    "Archivo de texto (*.txt)");
+                                                    tr("Archivo de texto (*.txt)"));
     QFile f(fileName);
     QTextStream in(&f);
 
     if(!f.open(QIODevice::ReadOnly)){
-        QMessageBox::warning(this, "Salarios", "No se puede abrir el archivo");
+        QMessageBox::warning(this, tr("Salarios"), tr("No se puede abrir el archivo"));
         return;
     }
     while(!in.atEnd()){

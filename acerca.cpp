@@ -7,7 +7,7 @@ Acerca::Acerca(QWidget *parent) :
     ui(new Ui::Acerca)
 {
     ui->setupUi(this);
-    ui->outVersion->setText("Versión: " + version);
+    ui->outVersion->setText(tr("Versión: ") + version);
 }
 
 Acerca::~Acerca()
@@ -19,11 +19,5 @@ void Acerca::on_pushButton_clicked()
 {
     close();
 }
-
-void Acerca::setVersion(QString value)
-{
-    this->version = value;
-}
-
 
 

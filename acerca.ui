@@ -136,7 +136,7 @@ color: rgb(255, 255, 255);</string>
     </font>
    </property>
    <property name="text">
-    <string>Versión:</string>
+    <string/>
    </property>
   </widget>
  </widget>

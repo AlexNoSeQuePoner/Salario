@@ -9,4 +9,9 @@
         <file>informacion.png</file>
         <file>boton-x.png</file>
     </qresource>
+    <qresource prefix="/Idiomas">
+        <file>Salario_es_EC.qm</file>
+        <file>Salario_en_US.qm</file>
+        <file>Salario_ja_JP.qm</file>
+    </qresource>
 </RCC>

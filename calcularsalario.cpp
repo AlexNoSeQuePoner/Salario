@@ -19,13 +19,13 @@ QString CalcularSalario::getJornada()
 {
     switch (m_jornada) {
     case 'V':
-        return "Vespertina";
+        return tr("Vespertina");
         break;
     case 'M':
-        return "Matutina";
+        return tr("Matutina");
         break;
     case 'N':
-        return "Nocturna";
+        return tr("Nocturna");
         break;
     }
     return "N/D";
@@ -65,11 +65,11 @@ void CalcularSalario::calcular()
 QString CalcularSalario::resultado()
 {
     QString str;
-    str = "Obrero: " + m_nombre + "\n";
-    str += "Horas: " + QString::number(m_horas) + "\n";
-    str += "Jornada: " + getJornada() + "\n";
-    str += "Salario Bruto: $" +QString::number(m_salarioBruto) + "\n";
-    str += "Descuento: $" +QString::number(m_descuento) + "\n";
-    str += "Salario Bruto: $" +QString::number(m_salarioNeto) + "\n\n";
+    str = tr("Obrero: ") + m_nombre + "\n";
+    str += tr("Horas: ") + QString::number(m_horas) + "\n";
+    str += tr("Jornada: ") + getJornada() + "\n";
+    str += tr("Salario Bruto: $") +QString::number(m_salarioBruto) + "\n";
+    str += tr("Descuento: $") +QString::number(m_descuento) + "\n";
+    str += tr("Salario Bruto: $") +QString::number(m_salarioNeto) + "\n\n";
     return str;
 }

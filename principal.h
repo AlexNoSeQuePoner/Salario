@@ -12,7 +12,6 @@
 #include <QFile>
 #include <QTextStream>
 
-#define VERSION "1.0.0"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Principal; }
